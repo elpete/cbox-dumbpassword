@@ -26,7 +26,7 @@ component accessors="true" singleton{
 	* Verify if the passed password target is dumb or not.
 	*/
 	boolean function isDumb( required target ){
-		return arrayContainsNoCase( variables.passwords, arguments.target );
+		return !! arrayContains( lcase( variables.passwords ), lcase( arguments.target ) );
 	}
 
 }
